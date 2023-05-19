@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const Url = require('../../models/shorten_url')
 
 const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
 const upperCaseLetters = lowerCaseLetters.toUpperCase()
@@ -17,6 +18,7 @@ router.post('/', (req, res) => {
   for (let i = 0; i < 5; i ++) {
     short += sample(range)
   }
+  
   res.render('shorten')
 })
 

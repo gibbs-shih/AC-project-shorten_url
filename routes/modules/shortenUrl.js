@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
   for (let i = 0; i < 5; i ++) {
     short += sample(range)
   }
-  return Url.create({oldUrl, short})
+  return Url.create({oldUrl, short: `https://shorten_url/${short}`})
     .then(res.render('shorten', {short, oldUrl}))
     .catch(error => console.log(error))
 })

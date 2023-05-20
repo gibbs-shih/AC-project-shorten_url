@@ -24,4 +24,11 @@ router.post('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// short url available when local server running
+router.get('/:short', (req, res) => {
+  return Url.find({short: req.params.short})
+    .then(url => res.redirect(url[0].oldUrl))
+    .catch(error => console.log(error))
+})
+
 module.exports = router

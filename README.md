@@ -37,21 +37,27 @@
 
 ### 2.初始
 
-`npm install`  --> 安裝套件
+進到專案資料夾並執行 `npm install`  --> 安裝套件
 
-### 3.開啟程式
+### 3.設定環境變數
 
-`npm run dev`  --> 執行程式
+建立 `.env` 檔案, 於檔案中輸入：
+
+`MONGODB_URI=mongodb+srv://a29428185:a58184292@cluster0.n2l5use.mongodb.net/shorten_url?retryWrites=true&w=majority`
+
+### 4.開啟程式
+
+於終端機輸入 `npm run dev`  --> 執行程式
 
 終端顯示 `Express is listening on http://localhost:3000`、`mongodb connected!` 即啟動完成
 
 請至 http://localhost:3000 開始使用程式
 
-### 4.使用程式
+### 5.使用程式
 
 於輸入框輸入網址後按下“Shorten”按鈕即可產生短網址
 
-### 5.結束程式
+### 6.結束程式
 
 於終端機案按下 `Ctrl + c` 即可結束程式
 

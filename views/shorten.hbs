@@ -1,22 +1,18 @@
 <div class="container text-center">
   <div class="mt-5 mx-3 text-start">
     <h2 style="margin-left: 25%">Success! Please use this link:</h2>
-    <a href="{{oldUrl}}" class="text-decoration-none" target="_blank"><h3 style="margin-left: 27%" class=" lh-base fst-italic" >http://localhost:3000/shortenUrl/{{short}}</h3></a>
+    <a id="oldUrl" href="{{oldUrl}}" class="text-decoration-none" target="_blank"><h3 style="margin-left: 27%" class=" lh-base fst-italic" >http://localhost:3000/shortenUrl/{{short}}</h3></a>
   </div>
-  <button type="submit" class="btn btn-primary fw-bold mt-3">Copy</button>
+  <button type="submit" class="btn btn-primary fw-bold mt-3" onclick="copy()">Copy</button>
   <a href="/" class="btn btn-outline-success fw-bold mt-3">Back</a>
 </div>
 
-
-
-
-{{!-- <form>
-  <div class="container text-center">
-    <div class="mt-5 mx-3">
-      <input type="text" class="form-control form-control-lg mx-auto border border-success" name="inputUrl"
-        aria-describedby="shortenUrl" placeholder="Input URL here" style="max-width: 900px">
-    </div>
-    <button type="submit" class="btn btn-primary fw-bold mt-3">Copy</button>
-    <a href="/" class="btn btn-outline-success fw-bold mt-3">Back</a>
-  </div>
-</form> --}}
+{{!-- set up copy function --}}
+<script>
+  function copy() {
+      const oldUrl = document.getElementById("oldUrl")
+      navigator.clipboard.writeText(oldUrl.innerText)
+        .then(() => alert("Copied successfully!"))
+        .catch(error => console.log(error))
+    }
+</script>
